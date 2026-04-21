@@ -15,6 +15,33 @@ export default function HRACalculatorPage() {
         title="HRA Exemption Calculator 2026-27 | House Rent Allowance Tax Benefit | India"
         description="Free HRA exemption calculator for FY 2026-27. Calculate your House Rent Allowance tax benefit under the Old Regime. See optimal rent to maximize HRA. Includes new 8 metro cities list (Bengaluru, Hyderabad, Pune, Ahmedabad added)."
         path="/hra-calculator"
+        breadcrumbs={[{ name: 'HRA Exemption Calculator', path: '/hra-calculator' }]}
+        faqs={[
+          {
+            question: 'What is HRA exemption and how is it calculated for FY 2026-27?',
+            answer: 'HRA exemption is the tax-free portion of House Rent Allowance paid by your employer. It is calculated as the minimum of three values: (1) actual HRA received, (2) 50% of basic salary for metro cities or 40% for non-metro cities, and (3) rent paid minus 10% of basic salary. The lowest of these three is exempt from tax under Section 10(13A).',
+          },
+          {
+            question: 'Is HRA exemption available under the New Tax Regime?',
+            answer: 'No. HRA exemption under Section 10(13A) is only available under the Old Tax Regime. If you opt for the New Tax Regime (default from FY 2023-24 onwards), you cannot claim HRA exemption regardless of how much rent you pay.',
+          },
+          {
+            question: 'Which cities qualify for 50% HRA in FY 2026-27?',
+            answer: 'From FY 2026-27 under the new Income Tax Rules 2026, eight cities qualify for the 50% metro HRA rate: Mumbai, Delhi, Chennai, Kolkata, Bengaluru, Hyderabad, Pune, and Ahmedabad. Bengaluru, Hyderabad, Pune, and Ahmedabad are newly added from 1 April 2026. All other cities qualify for 40% HRA.',
+          },
+          {
+            question: 'How much rent should I pay to maximize my HRA exemption?',
+            answer: 'To fully utilize your HRA exemption, your optimal rent should equal your maximum achievable exemption (the lower of HRA received and 50%/40% of basic) plus 10% of your basic salary. For example, if your HRA cap is ₹2,40,000 and your basic is ₹6,00,000, you should pay at least ₹2,40,000 + ₹60,000 = ₹3,00,000 per year (₹25,000/month) in rent. Our calculator shows this amount automatically.',
+          },
+          {
+            question: 'Do I need my landlord\'s PAN to claim HRA?',
+            answer: 'Yes, if your annual rent exceeds ₹1,00,000 (₹8,333/month), you must furnish your landlord\'s PAN to your employer. From FY 2026-27, new IT Rules 2026 also require disclosing the landlord–tenant relationship if you are related to the landlord (e.g., paying rent to a parent or spouse).',
+          },
+          {
+            question: 'Can I claim HRA if I pay rent to my parents?',
+            answer: 'Yes, you can pay rent to parents who own the property and claim HRA exemption, provided: (1) the property is genuinely owned by the parent, (2) rent is at market rate for the locality, (3) the parent declares it as rental income in their ITR, and (4) payments are made through banking channels. From FY 2026-27, you must disclose the relationship via Form 124 (new IT Rules 2026).',
+          },
+        ]}
       />
 
       <Header selectedYear={input.taxYear} onYearChange={year => update({ taxYear: year })} />

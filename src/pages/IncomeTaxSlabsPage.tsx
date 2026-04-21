@@ -13,6 +13,7 @@ export default function IncomeTaxSlabsPage() {
         title="Income Tax Slabs 2026-27 India | New & Old Regime | All Age Groups"
         description="Complete income tax slab rates for FY 2026-27 (AY 2027-28) under New Regime and Old Regime. Includes rates for individuals below 60, senior citizens (60-79), and super senior citizens (80+). Updated for Income Tax Act 2025."
         path="/income-tax-slabs"
+        breadcrumbs={[{ name: 'Income Tax Slabs 2026-27', path: '/income-tax-slabs' }]}
       />
 
       <Header selectedYear={DEFAULT_YEAR} onYearChange={() => {}} />

@@ -1,5 +1,5 @@
 # robots.txt — India Tax Calculator
-# Replace YOURDOMAIN.in with your actual domain before deploying.
+# Replace itrplanner.in with your actual domain before deploying.
 
 User-agent: *
 Allow: /
@@ -16,4 +16,4 @@ User-agent: Bytespider
 Disallow: /
 
 # Sitemap
-Sitemap: https://YOURDOMAIN.in/sitemap.xml
+Sitemap: https://itrplanner.in/sitemap.xml

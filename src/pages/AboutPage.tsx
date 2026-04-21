@@ -9,6 +9,7 @@ export default function AboutPage() {
         title="About — India Income Tax Calculator"
         description="About the India Income Tax Calculator. Built by Abhishek Das. Open-source, free, and privacy-first tax calculator based on the Income Tax Act 2025."
         path="/about"
+        breadcrumbs={[{ name: 'About', path: '/about' }]}
       />
 
       <header className="bg-gradient-to-r from-indigo-700 via-indigo-600 to-violet-600 text-white shadow-lg">

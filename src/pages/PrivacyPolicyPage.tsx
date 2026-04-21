@@ -9,6 +9,7 @@ export default function PrivacyPolicyPage() {
         title="Privacy Policy — India Income Tax Calculator"
         description="Privacy policy for the India Income Tax Calculator. We do not collect, store, or transmit any personal or financial data. All calculations are performed locally in your browser."
         path="/privacy-policy"
+        breadcrumbs={[{ name: 'Privacy Policy', path: '/privacy-policy' }]}
       />
 
       <header className="bg-gradient-to-r from-indigo-700 via-indigo-600 to-violet-600 text-white shadow-lg">
