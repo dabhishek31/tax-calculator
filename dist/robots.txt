@@ -1,0 +1,9 @@
+# robots.txt — India Tax Calculator
+# https://taxcalculator.in/
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://taxcalculator.in/sitemap.xml
