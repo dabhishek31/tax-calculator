@@ -44,7 +44,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-800">Abhishek Das</h3>
-                <p className="text-sm text-slate-600 mb-2">Software Developer</p>
+                <p className="text-sm text-slate-600 mb-2">Senior Architect – Platform</p>
                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
                   I built this calculator to help fellow Indian taxpayers understand and optimize their tax liability. The tool is fully open-source and free to use, with no data collection or tracking.
                 </p>
