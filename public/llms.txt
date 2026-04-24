@@ -1,0 +1,40 @@
+# itrplanner.in — India Income Tax Calculator
+
+> Free, open-source income tax calculator for India (FY 2026-27).
+> Compares New Tax Regime vs Old Tax Regime based on Income Tax Act 2025.
+> No data collection — all calculations run entirely in the browser.
+
+## Key Pages
+
+- [Income Tax Calculator](https://itrplanner.in/): Main calculator — compare New vs Old Regime instantly
+- [New vs Old Regime](https://itrplanner.in/new-vs-old-regime): Detailed side-by-side regime comparison
+- [HRA Exemption Calculator](https://itrplanner.in/hra-calculator): Calculate House Rent Allowance tax benefit
+- [Income Tax Slabs 2026-27](https://itrplanner.in/income-tax-slabs): Complete slab reference for all age groups
+- [About](https://itrplanner.in/about): Data sources, methodology, and open-source code
+
+## Coverage
+
+- Financial Year: FY 2026-27 (Assessment Year 2027-28)
+- Tax Act: Income Tax Act 2025 (effective 1 April 2026)
+- Regimes: New Regime (default, Section 115BAC) and Old Regime
+- Age groups: Under 60, Senior Citizens (60–79), Super Senior Citizens (80+)
+- Deductions: 80C (₹1.5L), 80D, 80CCD(1B) NPS (₹50K), 80CCD(2) employer NPS, Section 24(b) home loan interest (₹2L), HRA exemption
+- Standard deduction: ₹75,000 (New Regime), ₹50,000 (Old Regime)
+- Section 87A rebate: up to ₹60,000 for taxable income ≤ ₹12L under New Regime
+- Surcharge and cess: Included. Marginal relief: Not computed.
+- Metro cities for HRA (50% rate): Mumbai, Delhi, Chennai, Kolkata, Bengaluru, Hyderabad, Pune, Ahmedabad
+
+## New Regime Tax Slabs FY 2026-27
+
+- ₹0 – ₹4,00,000: Nil
+- ₹4,00,001 – ₹8,00,000: 5%
+- ₹8,00,001 – ₹12,00,000: 10%
+- ₹12,00,001 – ₹16,00,000: 15%
+- ₹16,00,001 – ₹20,00,000: 20%
+- ₹20,00,001 – ₹24,00,000: 25%
+- Above ₹24,00,000: 30%
+
+## Source
+
+Open source under MIT License: https://github.com/dabhishek31/tax-calculator
+Built by Abhishek Das. Data sourced from Income Tax Act 2025 and Union Budget 2026.

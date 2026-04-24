@@ -6,18 +6,12 @@ export interface BreadcrumbItem {
   path: string;
 }
 
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 interface SEOHeadProps {
   title: string;
   description: string;
   path: string;
   type?: string;
   breadcrumbs?: BreadcrumbItem[];
-  faqs?: FAQItem[];
 }
 
 const BASE_URL = 'https://itrplanner.in';
@@ -36,7 +30,7 @@ function useJsonLd(id: string, schema: object | null) {
   }, [id, JSON.stringify(schema)]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
-export default function SEOHead({ title, description, path, type = 'website', breadcrumbs, faqs }: SEOHeadProps) {
+export default function SEOHead({ title, description, path, type = 'website', breadcrumbs }: SEOHeadProps) {
   const url = `${BASE_URL}${path}`;
 
   const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
@@ -53,18 +47,7 @@ export default function SEOHead({ title, description, path, type = 'website', br
     ],
   } : null;
 
-  const faqSchema = faqs && faqs.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(f => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
-    })),
-  } : null;
-
   useJsonLd(`ld-breadcrumb-${path}`, breadcrumbSchema);
-  useJsonLd(`ld-faq-${path}`, faqSchema);
 
   return (
     <Helmet>

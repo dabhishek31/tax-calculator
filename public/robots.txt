@@ -1,18 +1,42 @@
-# robots.txt — India Tax Calculator
-# Replace itrplanner.in with your actual domain before deploying.
+# robots.txt — itrplanner.in
 
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Block AI training crawlers (optional but recommended for content protection)
-User-agent: GPTBot
-Disallow: /
-
+# AI answer engine crawlers — allowed for citations in AI search results
 User-agent: Google-Extended
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# AI training crawlers — blocked
+User-agent: GPTBot
+Disallow: /
+
 User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
 Disallow: /
 
 # Sitemap

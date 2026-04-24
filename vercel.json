@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.itrplanner.in" }],
+      "destination": "https://itrplanner.in/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

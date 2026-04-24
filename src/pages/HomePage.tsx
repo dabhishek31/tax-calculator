@@ -21,6 +21,9 @@ export default function HomePage() {
       <Header selectedYear={input.taxYear} onYearChange={year => update({ taxYear: year })} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" role="main" id="calculator">
+        <h1 className="text-2xl font-bold text-slate-800 mb-1">Free Income Tax Calculator India — FY 2026-27</h1>
+        <p className="text-slate-500 text-sm mb-5">Compare New Regime vs Old Regime instantly. Based on Income Tax Act 2025.</p>
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
 
           {/* ── Left: Input Panel ─── */}

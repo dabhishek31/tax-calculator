@@ -87,52 +87,41 @@
     }
     </script>
 
-    <!-- Structured Data: FAQPage -->
+    <!-- Structured Data: WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Which tax regime is better for FY 2026-27 — New or Old?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For most salaried individuals earning under ₹12 lakh, the New Regime is better due to the ₹60,000 rebate under Section 87A and zero tax up to ₹4 lakh. The Old Regime becomes advantageous if your total deductions under 80C, 80D, HRA, and home loan interest exceed ₹3-4 lakh. Use our calculator to compare both regimes with your exact income."
-          }
+      "@type": "WebSite",
+      "name": "India Tax Calculator",
+      "url": "https://itrplanner.in/",
+      "description": "Free income tax calculator for India. Compare New Regime vs Old Regime for FY 2026-27. Based on Income Tax Act 2025.",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://itrplanner.in/?q={search_term_string}"
         },
-        {
-          "@type": "Question",
-          "name": "What are the income tax slabs for FY 2026-27 under the New Regime?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Under the New Regime for FY 2026-27: ₹0-4L: Nil, ₹4-8L: 5%, ₹8-12L: 10%, ₹12-16L: 15%, ₹16-20L: 20%, ₹20-24L: 25%, Above ₹24L: 30%. A rebate of up to ₹60,000 under Section 87A is available if taxable income is ≤₹12 lakh."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much tax do I pay on a ₹10 lakh salary?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "On a gross salary of ₹10 lakh under the New Regime (FY 2026-27), after ₹75,000 standard deduction, your taxable income is ₹9,25,000. Tax = ₹20,000 (5% on ₹4-8L) + ₹12,500 (10% on ₹8-9.25L) = ₹32,500. With rebate u/s 87A (since taxable < ₹12L), your net tax is ₹0."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is HRA exemption and how is it calculated?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "HRA (House Rent Allowance) exemption is available only under the Old Regime. It is the minimum of: (1) Actual HRA received from employer, (2) 50% of basic salary for metro cities or 40% for non-metro, (3) Rent paid minus 10% of basic salary. From FY 2026-27, Bengaluru, Hyderabad, Pune, and Ahmedabad are classified as metro cities (50% rate)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is the Income Tax Act 2025 in effect for FY 2026-27?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, the new Income Tax Act 2025 came into effect on 1 April 2026, replacing the Income Tax Act 1961. The tax slabs, rates, and deduction limits for FY 2026-27 remain the same as FY 2025-26. The new act consolidates and simplifies provisions without changing rates."
-          }
-        }
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "India Tax Calculator",
+      "url": "https://itrplanner.in/",
+      "logo": "https://itrplanner.in/favicon.svg",
+      "founder": {
+        "@type": "Person",
+        "name": "Abhishek Das",
+        "url": "https://github.com/dabhishek31"
+      },
+      "sameAs": [
+        "https://github.com/dabhishek31/tax-calculator"
       ]
     }
     </script>

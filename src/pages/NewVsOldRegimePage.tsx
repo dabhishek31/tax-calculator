@@ -19,32 +19,6 @@ export default function NewVsOldRegimePage() {
         description="Compare New Regime vs Old Regime for FY 2026-27. Enter your salary and deductions to instantly see which tax regime saves you more money. Detailed side-by-side analysis with slab breakdown."
         path="/new-vs-old-regime"
         breadcrumbs={[{ name: 'New vs Old Regime Calculator', path: '/new-vs-old-regime' }]}
-        faqs={[
-          {
-            question: 'Which tax regime is better — New or Old Regime for FY 2026-27?',
-            answer: 'It depends on your deductions. The New Regime is better if your total deductions (80C, 80D, HRA, home loan interest, NPS, etc.) are below approximately ₹3.75 lakh. The Old Regime becomes beneficial when your deductions exceed that threshold. Use our calculator above with your actual numbers to get a precise comparison.',
-          },
-          {
-            question: 'What is the income limit for zero tax under the New Regime in FY 2026-27?',
-            answer: 'Under the New Tax Regime for FY 2026-27, income up to ₹12,00,000 is effectively tax-free for salaried individuals due to the Section 87A rebate of ₹60,000. Including the standard deduction of ₹75,000, a salaried person with gross salary up to ₹12,75,000 pays zero tax under the New Regime.',
-          },
-          {
-            question: 'What deductions are allowed under the Old Tax Regime?',
-            answer: 'The Old Regime allows all major deductions: Standard deduction (₹50,000 for salaried), Section 80C up to ₹1,50,000 (PPF, ELSS, LIC, tuition fees, home loan principal), Section 80CCD(1B) NPS up to ₹50,000, Section 80D health insurance up to ₹25,000–50,000, HRA exemption under Section 10(13A), home loan interest under Section 24(b) up to ₹2,00,000, and employer NPS under Section 80CCD(2).',
-          },
-          {
-            question: 'Can I switch between New and Old Regime every year?',
-            answer: 'Salaried employees (without business income) can switch between New and Old Regime every financial year when filing their ITR. However, taxpayers with business or professional income can only switch back to the Old Regime once — after switching to the New Regime, they can only return to the Old Regime one time, and thereafter must stay in the New Regime.',
-          },
-          {
-            question: 'What is the default tax regime for salaried employees in FY 2026-27?',
-            answer: 'The New Tax Regime is the default for all taxpayers including salaried employees from FY 2023-24 onwards, and this continues under the Income Tax Act 2025 effective 1 April 2026. If you want to opt for the Old Regime, you must explicitly declare it — salaried employees can do so by submitting a declaration to their employer at the start of the financial year.',
-          },
-          {
-            question: 'What is the surcharge rate for income above ₹50 lakh under both regimes?',
-            answer: 'Surcharge applies to taxable income above ₹50 lakh. Under both regimes: 10% surcharge for income between ₹50L–₹1Cr, 15% for ₹1Cr–₹2Cr, 25% for ₹2Cr–₹5Cr. Under the New Regime only, the surcharge is capped at 25% even above ₹5Cr. Under the Old Regime, a 37% surcharge applies for income above ₹5Cr (making the effective top rate 42.744%).',
-          },
-        ]}
       />
 
       <Header selectedYear={input.taxYear} onYearChange={year => update({ taxYear: year })} />
