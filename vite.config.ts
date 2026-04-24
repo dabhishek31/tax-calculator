@@ -12,7 +12,6 @@ export default defineConfig(({ isSsrBuild }) => ({
       output: isSsrBuild ? {} : {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-          'pdf-export': ['jspdf', 'html2canvas'],
         },
       },
     },

@@ -103,8 +103,36 @@ export default function AboutPage() {
             </p>
           </section>
 
+          <section className="mb-8">
+            <h2 className="text-xl font-bold text-slate-800 mb-3">Changelog</h2>
+            <ul className="space-y-2 text-sm text-slate-600">
+              <li className="flex items-start gap-3">
+                <span className="shrink-0 font-semibold text-slate-500 w-24">Apr 2026</span>
+                <span>Updated for Income Tax Act 2025 — new slabs, ₹75,000 standard deduction, 8-metro HRA list, Section 87A rebate up to ₹60,000.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="shrink-0 font-semibold text-slate-500 w-24">Feb 2025</span>
+                <span>Added HRA Optimizer, investment planner, and PDF/Markdown download.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="shrink-0 font-semibold text-slate-500 w-24">Apr 2024</span>
+                <span>Initial release with New vs Old Regime comparison for FY 2024-25.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-xl font-bold text-slate-800 mb-3">Report an Issue</h2>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Found a calculation error or outdated tax data? Please{' '}
+              <a href="https://github.com/dabhishek31/tax-calculator/issues" target="_blank" rel="noopener noreferrer"
+                 className="text-indigo-600 hover:text-indigo-800 font-medium">open an issue on GitHub</a>.
+              Tax rules change every budget — community reports help keep this tool accurate.
+            </p>
+          </section>
+
           <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 text-sm text-amber-800">
-            <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only and does not constitute tax, legal, or financial advice. Actual tax liability may vary. Please consult a qualified Chartered Accountant (CA) for personalized tax planning and filing.
+            <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only and does not constitute tax, legal, or financial advice. Actual tax liability may vary. Tax data was last reviewed against the Income Tax Act 2025 in April 2026. Please consult a qualified Chartered Accountant (CA) for personalized tax planning and filing.
           </div>
         </div>
       </main>

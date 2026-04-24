@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Income Tax Calculator India FY 2026-27 | New vs Old Regime | Free Online Tool"
+        title="Income Tax Calculator India FY 2026-27 | New vs Old Regime"
         description="Free Indian income tax calculator for FY 2026-27 (AY 2027-28). Compare New vs Old regime instantly. Includes 80C, 80D, HRA, NPS deductions, investment optimizer. Based on Income Tax Act 2025."
         path="/"
       />

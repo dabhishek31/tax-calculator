@@ -1,4 +1,3 @@
-import jsPDF from 'jspdf';
 import {
   ComparisonResult, TaxInput, HRAOptimizationResult, InvestmentSuggestion,
 } from '../types/tax';
@@ -23,7 +22,8 @@ function taxpayerLabel(input: TaxInput) {
 }
 
 // ─── PDF Generator ───────────────────────────────────────────────────────────
-export function downloadPDF(data: ReportData): void {
+export async function downloadPDF(data: ReportData): Promise<void> {
+  const { default: jsPDF } = await import('jspdf');
   const { input, result, hraOptimization, suggestions } = data;
   const { newRegime, oldRegime, betterRegime, saving } = result;
 

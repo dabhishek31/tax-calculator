@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ReportData, downloadPDF, downloadMarkdown } from '../utils/reportGenerator';
+import type { ReportData } from '../utils/reportGenerator';
 
 interface Props {
   data: ReportData;
@@ -22,7 +22,8 @@ export default function DownloadButton({ data }: Props) {
     setOpen(false);
     setLoading(type);
     try {
-      if (type === 'pdf') downloadPDF(data);
+      const { downloadPDF, downloadMarkdown } = await import('../utils/reportGenerator');
+      if (type === 'pdf') await downloadPDF(data);
       else downloadMarkdown(data);
     } finally {
       setLoading(null);

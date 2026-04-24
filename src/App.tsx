@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import IncomeTaxSlabsPage from './pages/IncomeTaxSlabsPage';
-import NewVsOldRegimePage from './pages/NewVsOldRegimePage';
-import HRACalculatorPage from './pages/HRACalculatorPage';
-import AboutPage from './pages/AboutPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import NotFoundPage from './pages/NotFoundPage';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const IncomeTaxSlabsPage = lazy(() => import('./pages/IncomeTaxSlabsPage'));
+const NewVsOldRegimePage = lazy(() => import('./pages/NewVsOldRegimePage'));
+const HRACalculatorPage = lazy(() => import('./pages/HRACalculatorPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 export default function App() {
   return (
@@ -23,15 +25,17 @@ export default function App() {
       <ScrollToTop />
 
       <div className="flex-1">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/income-tax-slabs" element={<IncomeTaxSlabsPage />} />
-          <Route path="/new-vs-old-regime" element={<NewVsOldRegimePage />} />
-          <Route path="/hra-calculator" element={<HRACalculatorPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen bg-slate-50" />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/income-tax-slabs" element={<IncomeTaxSlabsPage />} />
+            <Route path="/new-vs-old-regime" element={<NewVsOldRegimePage />} />
+            <Route path="/hra-calculator" element={<HRACalculatorPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </div>
 
       <Footer />

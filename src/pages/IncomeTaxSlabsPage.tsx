@@ -240,6 +240,55 @@ export default function IncomeTaxSlabsPage() {
           <p className="text-xs text-slate-500 mt-2">Health & Education Cess @ 4% is levied on (Tax + Surcharge).</p>
         </section>
 
+        {/* Worked Example */}
+        <section className="mb-10">
+          <h2 className="text-xl font-bold text-slate-800 mb-3">Worked Example — ₹20L Income (New Regime)</h2>
+          <p className="text-sm text-slate-600 mb-4">
+            Salaried employee, age below 60, gross salary ₹20,00,000. Standard deduction ₹75,000 applies under New Regime.
+          </p>
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full text-sm border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+              <thead>
+                <tr className="bg-indigo-600 text-white">
+                  <th className="text-left px-4 py-3 font-semibold">Slab</th>
+                  <th className="text-right px-4 py-3 font-semibold">Taxable Amount</th>
+                  <th className="text-right px-4 py-3 font-semibold">Rate</th>
+                  <th className="text-right px-4 py-3 font-semibold">Tax</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['₹0 – ₹4,00,000', '₹4,00,000', 'Nil', '₹0'],
+                  ['₹4,00,001 – ₹8,00,000', '₹4,00,000', '5%', '₹20,000'],
+                  ['₹8,00,001 – ₹12,00,000', '₹4,00,000', '10%', '₹40,000'],
+                  ['₹12,00,001 – ₹16,00,000', '₹4,00,000', '15%', '₹60,000'],
+                  ['₹16,00,001 – ₹19,25,000*', '₹3,25,000', '20%', '₹65,000'],
+                ].map(([slab, taxable, rate, tax], i) => (
+                  <tr key={slab} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td className="px-4 py-2.5 text-slate-700 border-b border-slate-100">{slab}</td>
+                    <td className="px-4 py-2.5 text-right text-slate-600 border-b border-slate-100">{taxable}</td>
+                    <td className="px-4 py-2.5 text-right font-semibold text-slate-800 border-b border-slate-100">{rate}</td>
+                    <td className="px-4 py-2.5 text-right font-semibold text-slate-800 border-b border-slate-100">{tax}</td>
+                  </tr>
+                ))}
+                <tr className="bg-indigo-50 font-semibold">
+                  <td className="px-4 py-2.5 text-slate-800" colSpan={3}>Total Income Tax</td>
+                  <td className="px-4 py-2.5 text-right text-indigo-700">₹1,85,000</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="px-4 py-2.5 text-slate-700" colSpan={3}>Add: Health &amp; Education Cess (4%)</td>
+                  <td className="px-4 py-2.5 text-right text-slate-700">₹7,400</td>
+                </tr>
+                <tr className="bg-indigo-50 font-bold">
+                  <td className="px-4 py-2.5 text-slate-800" colSpan={3}>Total Tax Payable</td>
+                  <td className="px-4 py-2.5 text-right text-indigo-700">₹1,92,400</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-slate-500">* Taxable income = ₹20,00,000 − ₹75,000 standard deduction = ₹19,25,000. No surcharge applies (income below ₹50L).</p>
+        </section>
+
         {/* CTA */}
         <div className="bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl p-6 text-white text-center">
           <h2 className="text-xl font-bold mb-2">Calculate Your Exact Tax</h2>
