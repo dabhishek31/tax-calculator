@@ -1,13 +1,12 @@
 /**
  * Static pre-render script.
- * Runs after `vite build` to inject server-rendered HTML into each route's index.html.
- * Uses Vite's SSR module loading to execute React components in Node.js.
+ * Runs after both vite build (client) and vite build --ssr (server bundle).
+ * Imports the compiled SSR bundle directly — no dev server needed.
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { createServer } from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -23,55 +22,32 @@ const ROUTES = [
 ];
 
 async function run() {
-  // Start Vite in SSR mode to load TypeScript/JSX modules in Node.js
-  const vite = await createServer({
-    root: ROOT,
-    server: { middlewareMode: true },
-    appType: 'custom',
-    // Silence dev-server output during prerender
-    customLogger: {
-      info: () => {},
-      warn: (msg) => console.warn('[vite]', msg),
-      error: (msg) => console.error('[vite]', msg),
-      clearScreen: () => {},
-      hasErrorLogged: () => false,
-      hasWarned: false,
-      warnOnce: () => {},
-    },
-  });
+  // Load the compiled SSR bundle directly (no Vite dev server required)
+  const { render } = await import('../dist-ssr/entry-server.js');
 
-  try {
-    const { render } = await vite.ssrLoadModule('/src/entry-server.tsx');
+  const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8');
 
-    // Use the built dist/index.html as the HTML shell (has hashed asset paths)
-    const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8');
+  for (const route of ROUTES) {
+    process.stdout.write(`  Pre-rendering ${route} ...`);
 
-    for (const route of ROUTES) {
-      process.stdout.write(`  Pre-rendering ${route} ...`);
+    const { appHtml, headTags } = await render(route);
 
-      const { appHtml, headTags } = await render(route);
+    const html = template
+      .replace('<!--app-head-->', headTags)
+      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
-      const html = template
-        // Inject per-page head tags (title, meta, canonical, OG, Twitter, breadcrumb schema)
-        .replace('<!--app-head-->', headTags)
-        // Inject server-rendered body HTML
-        .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+    const outPath =
+      route === '/'
+        ? path.join(DIST, 'index.html')
+        : path.join(DIST, route.slice(1), 'index.html');
 
-      const outPath =
-        route === '/'
-          ? path.join(DIST, 'index.html')
-          : path.join(DIST, route.slice(1), 'index.html');
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    fs.writeFileSync(outPath, html, 'utf-8');
 
-      fs.mkdirSync(path.dirname(outPath), { recursive: true });
-      fs.writeFileSync(outPath, html, 'utf-8');
-
-      process.stdout.write(' ✅\n');
-    }
-
-    console.log(`\n✅ Pre-render complete. ${ROUTES.length} routes written to dist/`);
-  } finally {
-    await vite.close();
+    process.stdout.write(' ✅\n');
   }
+
+  console.log(`\n✅ Pre-render complete. ${ROUTES.length} routes written to dist/`);
 }
 
 run().catch((err) => {
