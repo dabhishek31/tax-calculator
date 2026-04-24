@@ -11,6 +11,15 @@ export default function AboutPage() {
         path="/about"
         breadcrumbs={[{ name: 'About', path: '/about' }]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Abhishek Das',
+        jobTitle: 'Software Developer',
+        url: 'https://github.com/dabhishek31',
+        sameAs: ['https://github.com/dabhishek31'],
+        knowsAbout: ['Income Tax', 'Indian Tax Law', 'React', 'TypeScript'],
+      }) }} />
 
       <header className="bg-gradient-to-r from-indigo-700 via-indigo-600 to-violet-600 text-white shadow-lg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-5">

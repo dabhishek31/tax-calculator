@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  ssr: {
+    // Force Vite to bundle these ESM-only packages for SSR instead of loading them natively
+    noExternal: ['react-helmet-async'],
+  },
   build: {
     rollupOptions: {
       output: {
