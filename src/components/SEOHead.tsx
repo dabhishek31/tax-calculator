@@ -11,11 +11,12 @@ interface SEOHeadProps {
   path: string;
   type?: string;
   breadcrumbs?: BreadcrumbItem[];
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const BASE_URL = 'https://itrplanner.in';
 
-export default function SEOHead({ title, description, path, type = 'website', breadcrumbs }: SEOHeadProps) {
+export default function SEOHead({ title, description, path, type = 'website', breadcrumbs, schema }: SEOHeadProps) {
   const url = `${BASE_URL}${path}`;
 
   const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
@@ -32,6 +33,10 @@ export default function SEOHead({ title, description, path, type = 'website', br
     ],
   } : null;
 
+  const extraSchemas = schema
+    ? (Array.isArray(schema) ? schema : [schema])
+    : [];
+
   return (
     <Helmet>
       <title>{title}</title>
@@ -46,7 +51,7 @@ export default function SEOHead({ title, description, path, type = 'website', br
       <meta property="og:image" content={`${BASE_URL}/og-image.png`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="India Tax Calculator" />
+      <meta property="og:site_name" content="ITR Planner" />
       <meta property="og:locale" content="en_IN" />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -59,6 +64,12 @@ export default function SEOHead({ title, description, path, type = 'website', br
           {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
+
+      {extraSchemas.map((s, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(s)}
+        </script>
+      ))}
     </Helmet>
   );
 }

@@ -68,10 +68,19 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "India Tax Calculator",
+      "name": "ITR Planner",
+      "alternateName": "India Income Tax Calculator",
       "url": "https://itrplanner.in/",
       "description": "Free income tax calculator for India. Compare New Regime vs Old Regime for FY 2026-27. Based on Income Tax Act 2025.",
-      "inLanguage": "en-IN"
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://itrplanner.in/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
 
@@ -80,9 +89,15 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "India Tax Calculator",
+      "name": "ITR Planner",
+      "alternateName": "itrplanner.in",
       "url": "https://itrplanner.in/",
-      "logo": "https://itrplanner.in/favicon.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://itrplanner.in/favicon.svg",
+        "width": 512,
+        "height": 512
+      },
       "founder": {
         "@type": "Person",
         "name": "Abhishek Das",

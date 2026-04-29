@@ -7,13 +7,40 @@ import { TAX_CONFIGS, DEFAULT_YEAR } from '../config/taxConfig';
 export default function IncomeTaxSlabsPage() {
   const config = TAX_CONFIGS[DEFAULT_YEAR];
 
+  const pageSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'Income Tax Slabs FY 2026-27 | New & Old Regime | Standard Deduction',
+      'url': 'https://itrplanner.in/income-tax-slabs',
+      'description': 'Complete income tax slab rates for FY 2026-27 (AY 2027-28). New Regime slabs, Old Regime slabs by age, standard deduction ₹75,000, and deduction limits.',
+      'inLanguage': 'en-IN',
+      'dateModified': '2026-04-29',
+      'isPartOf': { '@type': 'WebSite', 'url': 'https://itrplanner.in/' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      'headline': 'Income Tax Slabs for FY 2026-27 (AY 2027-28): New Regime vs Old Regime',
+      'description': 'Complete guide to income tax slab rates for FY 2026-27. Includes New Regime slabs with zero-tax up to ₹12.75L, Old Regime slabs for all age groups, standard deduction, surcharge rates, and worked examples.',
+      'url': 'https://itrplanner.in/income-tax-slabs',
+      'inLanguage': 'en-IN',
+      'dateModified': '2026-04-29',
+      'datePublished': '2026-04-20',
+      'author': { '@type': 'Person', 'name': 'Abhishek Das', 'url': 'https://github.com/dabhishek31' },
+      'publisher': { '@type': 'Organization', 'name': 'ITR Planner', 'logo': { '@type': 'ImageObject', 'url': 'https://itrplanner.in/favicon.svg' } },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': 'https://itrplanner.in/income-tax-slabs' },
+    },
+  ];
+
   return (
     <>
       <SEOHead
-        title="Income Tax Slabs 2026-27 India | New & Old Regime | All Age Groups"
-        description="Complete income tax slab rates for FY 2026-27 (AY 2027-28) under New Regime and Old Regime. Includes rates for individuals below 60, senior citizens (60-79), and super senior citizens (80+). Updated for Income Tax Act 2025."
+        title="Income Tax Slabs FY 2026-27 | New & Old Regime + Standard Deduction | ITR Planner"
+        description="Complete income tax slab rates for FY 2026-27 (AY 2027-28). New Regime: zero tax up to ₹12.75L. Standard deduction ₹75,000 for salaried. Old Regime slabs for all age groups. Updated for Income Tax Act 2025."
         path="/income-tax-slabs"
-        breadcrumbs={[{ name: 'Income Tax Slabs 2026-27', path: '/income-tax-slabs' }]}
+        breadcrumbs={[{ name: 'Income Tax Slabs FY 2026-27', path: '/income-tax-slabs' }]}
+        schema={pageSchema}
       />
 
       <Header selectedYear={DEFAULT_YEAR} onYearChange={() => {}} />

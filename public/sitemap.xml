@@ -4,44 +4,44 @@
   <!-- Core calculator pages — highest priority -->
   <url>
     <loc>https://itrplanner.in/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://itrplanner.in/new-vs-old-regime</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://itrplanner.in/hra-calculator</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Reference / content pages -->
+  <!-- Reference / content pages — updated with new content -->
   <url>
     <loc>https://itrplanner.in/income-tax-slabs</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Supporting pages -->
   <url>
     <loc>https://itrplanner.in/about</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://itrplanner.in/privacy-policy</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

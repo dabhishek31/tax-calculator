@@ -9,7 +9,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.[a-zA-Z]{2,4}$).*)",
       "destination": "/index.html"
     }
   ],

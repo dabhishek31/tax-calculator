@@ -12,13 +12,40 @@ import { formatINR } from '../utils/format';
 export default function NewVsOldRegimePage() {
   const { input, update, config, result } = useTaxCalculator();
 
+  const pageSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': 'New vs Old Tax Regime FY 2026-27 — Which Saves More?',
+      'url': 'https://itrplanner.in/new-vs-old-regime',
+      'description': 'Compare New Regime vs Old Regime for FY 2026-27 (AY 2027-28). Free calculator shows which regime saves more tax based on your salary and deductions.',
+      'inLanguage': 'en-IN',
+      'dateModified': '2026-04-29',
+      'isPartOf': { '@type': 'WebSite', 'url': 'https://itrplanner.in/' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      'headline': 'New vs Old Tax Regime FY 2026-27: Which is Better for You?',
+      'description': 'A detailed comparison of the New Tax Regime and Old Tax Regime for FY 2026-27, with a free calculator to find your personalised savings.',
+      'url': 'https://itrplanner.in/new-vs-old-regime',
+      'inLanguage': 'en-IN',
+      'dateModified': '2026-04-29',
+      'datePublished': '2026-04-20',
+      'author': { '@type': 'Person', 'name': 'Abhishek Das', 'url': 'https://github.com/dabhishek31' },
+      'publisher': { '@type': 'Organization', 'name': 'ITR Planner', 'logo': { '@type': 'ImageObject', 'url': 'https://itrplanner.in/favicon.svg' } },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': 'https://itrplanner.in/new-vs-old-regime' },
+    },
+  ];
+
   return (
     <>
       <SEOHead
-        title="New vs Old Tax Regime Calculator 2026-27 | Which Regime is Better? | India"
-        description="Compare New Regime vs Old Regime for FY 2026-27. Enter your salary and deductions to instantly see which tax regime saves you more money. Detailed side-by-side analysis with slab breakdown."
+        title="New vs Old Tax Regime FY 2026-27 — Which Saves More? | ITR Planner"
+        description="Compare New Regime vs Old Regime for FY 2026-27 (AY 2027-28). Enter your salary and deductions — free calculator instantly shows which tax regime saves you more. Side-by-side slab breakdown included."
         path="/new-vs-old-regime"
         breadcrumbs={[{ name: 'New vs Old Regime Calculator', path: '/new-vs-old-regime' }]}
+        schema={pageSchema}
       />
 
       <Header selectedYear={input.taxYear} onYearChange={year => update({ taxYear: year })} />
@@ -26,10 +53,9 @@ export default function NewVsOldRegimePage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" role="main">
         <Breadcrumbs items={[{ label: 'New vs Old Regime Calculator', path: '/new-vs-old-regime' }]} />
 
-        <h1 className="text-3xl font-bold text-slate-800 mb-2">New Regime vs Old Regime — Which Tax Regime is Better?</h1>
+        <h1 className="text-3xl font-bold text-slate-800 mb-2">New vs Old Tax Regime FY 2026-27 — Which Saves More?</h1>
         <p className="text-slate-500 text-sm mb-6">
-          Enter your income and deductions below to get a personalized comparison for FY 2026-27.
-          The calculator will show exactly how much you save under each regime.
+          Free calculator for FY 2026-27 (AY 2027-28). Enter your income and deductions — see exactly how much each regime costs you, and which one to pick.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
